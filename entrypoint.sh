@@ -7,9 +7,6 @@ function main() {
   sanitize "${INPUT_NAME}" "name"
   sanitize "${INPUT_USERNAME}" "username"
   sanitize "${INPUT_PASSWORD}" "password"
-  
-  echo "${INPUT_USERNAME}"
-  echo "${INPUT_PASSWORD}"
 
   REGISTRY_NO_PROTOCOL=$(echo "${INPUT_REGISTRY}" | sed -e 's/^https:\/\///g')
   if uses "${INPUT_REGISTRY}" && ! isPartOfTheName "${REGISTRY_NO_PROTOCOL}"; then
